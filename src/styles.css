@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --light-green: #77dd77ff;
+  --dark-spring-green: #04724dff;
+  --gunmetal: #1e2d2fff;
+  --bright-pink-crayola: #ff4b65ff;
+  --mimi-pink: #ffddefff;
+
+  --border-pixels: 6px;
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+}
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem;
+}
+.group-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-pixels);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #FFF;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background-color: var(--bright-pink-crayola);
+}
+.btn-secondary {
+  background-color: var(--light-green);
+}
+.input-form {
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-pixels);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.input-form:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.input-form:focus {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.label-form {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--gunmetal);
+}
+.white-img {
+  filter: brightness(0) invert(1);
+}
+.card-img-top {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+}
+
+@media screen and (min-width: 993px) {
+  .btn {
+    width: auto;
+  }
+}
