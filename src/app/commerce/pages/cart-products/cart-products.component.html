@@ -1,0 +1,20 @@
+<section>
+  <app-banner-commerce></app-banner-commerce>
+  <div class="cart-container">
+    <div *ngFor="let product of itemsCart" class="card">
+      <img [src]="product.image" alt="{{ product.name }}" class="card-img-cart">
+      <div class="cart-container__items">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">Precio: ${{ product.totalPrice }}</p>
+        <div class="quantity-container">
+          <label for="quantity">Cantidad</label>
+          <input type="number" [value]="product.quantity" id="quantity" min="0" (change)="updatePrice(product, $event)">
+        </div>
+      </div>
+    </div>
+    <span>Valor Total: ${{ getTotal() }}</span>
+    <div>
+      <button [routerLink]="'/commerce/bill'" class="btn btn-primary">Realizar Pedido</button>
+    </div>
+  </div>
+</section>

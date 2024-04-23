@@ -1,0 +1,31 @@
+<form [formGroup]="productForm" class="card">
+  <img [src]="product.image" alt="{{ product.name }}" class="card-img-top">
+  <div class="input-edit">
+    <label for="name">Nombre Producto:</label>
+    <input type="text" name="name" id="name" formControlName="name">
+  </div>
+  <div class="input-edit">
+    <label for="description">Descripción:</label>
+    <input type="text" name="description" id="description" formControlName="description">
+  </div>
+  <div class="input-edit">
+    <label for="price">Precio:</label>
+    <input type="number" name="price" id="price" formControlName="price">
+  </div>
+  <div class="input-edit">
+    <label for="quantity">Cantidad disponible:</label>
+    <input type="number" name="quantity" id="quantity" formControlName="quantity">
+  </div>
+  <div class="input-edit">
+    <label for="category">Categoria</label>
+    <input type="text" name="category" id="category" formControlName="category" >
+  </div>
+  <div class="products-container__btn">
+    <button class="btn btn-primary" (click)="onDelete(product)">
+      Eliminar
+    </button>
+    <button class="btn btn-secondary" (click)="onUpdate(product)">
+      Actualizar
+    </button>
+  </div>
+</form>

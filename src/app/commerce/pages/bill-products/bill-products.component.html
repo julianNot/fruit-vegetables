@@ -1,0 +1,16 @@
+<section>
+  <app-banner-commerce></app-banner-commerce>
+  <div class="cart-container">
+    <div class="card">
+      <div *ngFor="let product of cartItems">
+        <div class="cart-container__items">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">Precio unitario: ${{ product.price }}</p>
+          <p class="card-text">Cantidad comprada: {{ product.quantity }}</p>
+          <p class="card-text">Total: ${{ product.price * product.quantity }}</p>
+        </div>
+      </div>
+      <span>Valor Total: ${{ getTotal() }}</span>
+    </div>
+  </div>
+</section>

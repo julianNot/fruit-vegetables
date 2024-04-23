@@ -1,0 +1,9 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.card {
+  width: 50%;
+}

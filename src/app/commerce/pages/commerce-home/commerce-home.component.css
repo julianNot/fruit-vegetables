@@ -1,0 +1,85 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.home-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.home-menu__container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.home-menu__item {
+  color: var(--light-green);
+  font-weight: bold;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.home-menu__item--admin {
+  color: var(--bright-pink-crayola);
+  font-weight: bold;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.home-menu__item,
+.home-menu__item--cart,
+.home-menu__item--admin {
+  transition: box-shadow 0.3s ease;
+}
+.home-menu__item:hover,
+.home-menu__item--cart:hover,
+.home-menu__item--admin:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.home-menu__item--cart {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.cart__counter {
+  font-size: 0.8rem;
+  position: relative;
+  top: -11px;
+  left: -4px;
+  color: var(--dark-spring-green);
+}
+.products-container__btn {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (min-width: 993px) {
+  .home-img__banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../../assets/images/fruits-vegetables.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    filter: brightness(0.7);
+  }
+  .home-img__banner--title {
+    padding: 4rem;
+  }
+}

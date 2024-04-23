@@ -1,0 +1,17 @@
+<section>
+  <app-banner-commerce></app-banner-commerce>
+  <section>
+    <div class="btn-create">
+      <div>
+      </div>
+      <button class="btn btn-secondary">
+        Agregar Producto
+      </button>
+    </div>
+    <section class="products-container">
+      <div *ngFor="let product of products">
+        <app-card-edit [product]="product"></app-card-edit>
+      </div>
+    </section>
+  </section>
+</section>
