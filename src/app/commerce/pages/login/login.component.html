@@ -1,1 +1,47 @@
-<p>login works!</p>
+<section class="login-user">
+  <div class="login-user__img">
+  </div>
+  <div class="login-user__form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="card">
+      <div class="group-form">
+        <label class="label-form" for="username">Correo de usuario</label>
+        <input class="input-form" type="text" id="username" name="username" formControlName="email">
+      </div>
+      <div class="group-form">
+        <label class="label-form" for="password">Contraseña</label>
+        <input
+          class="input-form"
+          type="password"
+          id="password"
+          name="password"
+          formControlName="password"
+        >
+        <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="error-message">
+          La contraseña debe tener al menos 6 caracteres.
+        </div>
+      </div>
+      <div *ngIf="type" class="group-form">
+        <label class="label-form" for="passwordVerify">Contraseña</label>
+        <input
+          class="input-form"
+          type="password"
+          id="passwordVerify"
+          name="passwordVerify"
+          formControlName="passwordVerify"
+          (change)="verifyPassword()"
+        >
+        <div *ngIf="loginForm.get('passwordVerify')?.errors?.['notMatch']" class="error-message">
+          Las contraseñas no coinciden.
+        </div>
+      </div>
+      <div *ngIf="isError" class="error-message">
+        {{errorLogin}}
+      </div>
+      <div class="btn-container__form">
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">{{ type? 'Registrarse': 'Ingresar' }}</button>
+        <a *ngIf="!type" [routerLink]="'/commerce/register'">¿No tienes cuenta? Registrate</a>
+        <a *ngIf="type" [routerLink]="'/commerce/login'">¿Ya tienes cuenta? Inicia sesión</a>
+      </div>
+    </form>
+  </div>
+</section>
